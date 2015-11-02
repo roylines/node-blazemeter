@@ -4,7 +4,7 @@
   "description": "node.js wrapper for BlazeMeter REST API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/roylines/node-blazemeter/issues"
   },
-  "homepage": "https://github.com/roylines/node-blazemeter#readme"
+  "homepage": "https://github.com/roylines/node-blazemeter#readme",
+  "devDependencies": {
+    "mocha": "2.3.3"
+  }
 }
