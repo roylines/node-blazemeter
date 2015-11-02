@@ -28,5 +28,8 @@
   },
   "dependencies": {
     "request": "2.65.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
