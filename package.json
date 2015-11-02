@@ -4,7 +4,8 @@
   "description": "node.js wrapper for BlazeMeter REST API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "lab -t 100",
+    "test-cov-html": "lab -r html -o coverage.html"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/roylines/node-blazemeter#readme",
   "devDependencies": {
-    "mocha": "2.3.3"
+    "chai": "3.4.0",
+    "lab": "7.1.0"
+  },
+  "dependencies": {
+    "request": "2.65.0"
   }
 }
