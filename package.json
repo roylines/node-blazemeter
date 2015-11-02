@@ -24,7 +24,8 @@
   "homepage": "https://github.com/roylines/node-blazemeter#readme",
   "devDependencies": {
     "chai": "3.4.0",
-    "lab": "7.1.0"
+    "lab": "7.1.0",
+    "sinon": "1.17.2"
   },
   "dependencies": {
     "request": "2.65.0"
