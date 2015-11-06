@@ -1,23 +1,14 @@
+var _ = require('lodash');
 var Blazemeter = require('../lib/blazemeter');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
-var request = require('request');
 var should = require('chai').should();
-var sinon = require('sinon');
 
 lab.experiment('blazemeter', function() {
   var blaze;
 
   lab.beforeEach(function(done) {
-    blaze = new Blazemeter('APIKEY');
-    sinon.stub(request, 'get');
-    sinon.stub(request, 'post');
-    return done();
-  });
-
-  lab.afterEach(function(done) {
-    request.get.restore();
-    request.post.restore();
+    blaze = new Blazemeter(process.env.BLAZEMETER_API_KEY);
     return done();
   });
 
@@ -26,17 +17,21 @@ lab.experiment('blazemeter', function() {
     return done();
   });
 
-  lab.test('can add test', function(done) {
-    request.post.yields();
-    return blaze.tests.add('CONFIG', function(e, tests) {
+  lab.test('can get all projects', function(done) {
+    return blaze.projects.all(function(e, projects) {
       should.not.exist(e);
-      assertToken(request.post);
+      projects.should.not.be.empty;
+      _.find(projects, { name: 'blaze-test-project' }).should.have.property('id');
       return done(e);
     });
   });
-
-  function assertToken(method) {
-    var options = method.args[0][0];
-    options.headers['x-api-key'] = 'APIKEY';
-  }
+  
+  lab.test('can get all tests', function(done) {
+    return blaze.tests.all(function(e, projects) {
+      should.not.exist(e);
+      projects.should.not.be.empty;
+      _.find(projects, { name: 'blaze-test-test' }).should.have.property('id');
+      return done(e);
+    });
+  });
 });
