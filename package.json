@@ -1,6 +1,6 @@
 {
   "name": "blazemeter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node.js wrapper for BlazeMeter REST API",
   "main": "index.js",
   "scripts": {
