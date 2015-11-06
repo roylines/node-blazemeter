@@ -16,6 +16,14 @@ lab.experiment('blazemeter', function() {
     should.exist(blaze);
     return done();
   });
+  
+  lab.test('returns error if key invalid', function(done) {
+    var blaze2 = new Blazemeter('Invalid');
+    return blaze2.projects.all(function(e) {
+      should.exist(e);
+      return done();
+    });
+  });
 
   lab.test('can get all projects', function(done) {
     return blaze.projects.all(function(e, projects) {
