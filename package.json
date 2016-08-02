@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/roylines/node-blazemeter#readme",
   "devDependencies": {
-    "chai": "3.4.0",
-    "lab": "7.1.0",
-    "lodash": "^3.10.1",
-    "sinon": "1.17.2"
+    "chai": "*",
+    "lab": "*",
+    "lodash": "*",
+    "sinon": "*"
   },
   "dependencies": {
-    "request": "2.65.0"
+    "request": "2.74.0"
   },
   "engines": {
     "node": ">=4.0.0"
