@@ -29,7 +29,7 @@
     "sinon": "*"
   },
   "dependencies": {
-    "request": "2.74.0"
+    "request": "2.81.0"
   },
   "engines": {
     "node": ">=4.0.0"
